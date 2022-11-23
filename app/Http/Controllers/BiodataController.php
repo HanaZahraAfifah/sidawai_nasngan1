@@ -21,9 +21,8 @@ class BiodataController extends Controller
             $dtBiodata = Biodata::where('users_id',Auth::user()->id)->first();
             return view('Biodata.Data-biodata', compact('dtBiodata'));
         }else{
-            $pagination = 10;
-            $dtBiodata = Biodata::paginate($pagination);
-            return view('Biodata.Data-biodata', compact('dtBiodata'))->with('i', ($request->input('page',1)-1) * $pagination);
+            $dtBiodata = Biodata::all();
+            return view('Biodata.Data-biodata', compact('dtBiodata'));
         }
     }
 

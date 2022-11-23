@@ -50,16 +50,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <br>
 
   <div class = "card-body" >
-            <table class ="table table-bordered">
-            <thead class="table-dark">
-
+            <table id="example1" class="table table-bordered">
+              <thead class="table-dark">
                 <tr>
                     <th>No</th>
                     <th>Jenis Jabatan</th>
                     <th>Aksi</th>
                 </tr>
-                </thead>
-
+              </thead>
+              <tbody>
                 @foreach ($dtJenJab as $item)
                 <tr>
                 <td>{{ $loop->iteration }}</td>
@@ -71,6 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </td>
                 </tr>
                 @endforeach
+              </tbody>
             </table>
         </div>
         </div>

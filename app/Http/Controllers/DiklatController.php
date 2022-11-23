@@ -16,14 +16,13 @@ class DiklatController extends Controller
      */
     public function index(Request $request)
     {
-        $pagination = 10;
         if(Auth::user()->level == "user"){
             $getBiodata = Biodata::where('users_id',Auth::user()->id)->first();
             $dtDiklat = Diklat::where('nama_pegawai_id',$getBiodata->id)->paginate($pagination);
         }else{
-            $dtDiklat = Diklat::paginate($pagination);
+            $dtDiklat = Diklat::all();
         }
-        return view('Diklat.Data-diklat', compact('dtDiklat'))->with('i', ($request->input('page',1)-1) * $pagination);
+        return view('Diklat.Data-diklat', compact('dtDiklat'));
     }
 
     /**

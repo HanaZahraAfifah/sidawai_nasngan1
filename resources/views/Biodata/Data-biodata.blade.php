@@ -59,11 +59,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             
 
   <div class = "card-body" >
-  <table class="table table-bordered table-default table-striped">
+  <table id="example1" class="table table-bordered table-default table-striped table-responsive">
 
   <thead class="table-dark">
-
-
             @if(Auth::user()->level == "admin")
                 <tr>
                     <th>No</th>
@@ -101,11 +99,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <th>Diklat Terakhir</th>
                 </tr>
                 @endif
-                </div>
                 </thead>
-
-      
-         
+         <tbody>
                 @if(Auth::user()->level == "user")
                 <tr>
                     <td>{{ $dtBiodata->nama_pegawai }}</td>
@@ -130,7 +125,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 @else
                 @foreach ($dtBiodata as $item)
                 <tr>
-                    <td>{{ ++$i }}</td>
+                    <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->nama_pegawai }}</td>
                     <td>{{ $item->nip }}</td>
                     <td>{{ $item->tmp_lahir }}</td>
@@ -158,6 +153,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </tr>
                 @endforeach
                 @endif
+              </tbody>
             </table>
         </div>
         </div>
@@ -168,13 +164,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
         <div class="card-footer">
-        @if(Auth::user()->level == "admin")
-          Ini Halaman Ke-: {{ $dtBiodata->currentPage() }}<br>
-          Jumlah Data: {{ $dtBiodata->total() }}<br>
-          Data perhalaman: {{ $dtBiodata->perPage() }}<br>
-          <br>
-          {{ $dtBiodata->links() }}  
-        @endif
+        
         </div>
     </div>
 </div>

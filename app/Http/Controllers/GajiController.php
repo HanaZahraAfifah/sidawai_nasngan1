@@ -15,14 +15,13 @@ class GajiController extends Controller
      */
     public function index(Request $request)
     {
-        $pagination = 10;
         if(Auth::user()->level == "user"){
             $getBiodata = Biodata::where('users_id',Auth::user()->id)->first();
             $dtGaji = Gaji::where('nama_pegawai_id',$getBiodata->id)->paginate($pagination);        
         }else{
-            $dtGaji = Gaji::paginate($pagination);
+            $dtGaji = Gaji::all();
         }
-        return view('Gaji.Data-gaji', compact('dtGaji'))->with('i', ($request->input('page',1)-1) * $pagination);
+        return view('Gaji.Data-gaji', compact('dtGaji'));
     }
 
     /**

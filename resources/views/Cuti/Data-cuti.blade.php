@@ -55,9 +55,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <br>
 
   <div class = "card-body">
-            <table class ="table table-bordered table-default table-striped">
+            <table id="example1" class ="table table-bordered table-default table-striped">
             <thead class="table-dark">
-
 
             @if(Auth::user()->level == "admin")
                 <tr>
@@ -85,10 +84,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 @endif
                 </thead>
 
-                
+                <tbody>
                 @foreach ($dtCuti as $item)
                 <tr>
-                <td>{{ ++$i }}</td>
+                <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->biodata->nama_pegawai }}</td>
                     <td>{{ $item->nip }}</td>
                     <td>{{ $item->jenis_cuti }}</td>
@@ -103,20 +102,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </td>
                 </tr>
                 @endforeach
+              </tbody>
             </table>
             </div>
         </div>
         </div>
         </div>        
         <div class="card-footer">
-        @if(Auth::user()->level == "admin")
-        Ini Halaman Ke-: {{ $dtCuti->currentPage() }}<br>
-        Jumlah Data: {{ $dtCuti->total() }}<br>
-        Data perhalaman: {{ $dtCuti->perPage() }}<br>
-        <br>
-        {{ $dtCuti->links() }}  
-        @endif
-
       </div>
     </div>
 </div>

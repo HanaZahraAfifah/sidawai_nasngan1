@@ -16,14 +16,13 @@ class CutiController extends Controller
      */
     public function index(Request $request)
     {
-        $pagination = 10;
         if(Auth::user()->level == "user"){
             $getBiodata = Biodata::where('users_id',Auth::user()->id)->first();
             $dtCuti = Cuti::where('nama_pegawai_id',$getBiodata->id)->paginate($pagination);
         }else{
-            $dtCuti = Cuti::paginate($pagination);
+            $dtCuti = Cuti::all();
         }
-        return view('Cuti.Data-cuti', compact('dtCuti'))->with('i', ($request->input('page',1)-1) * $pagination);
+        return view('Cuti.Data-cuti', compact('dtCuti'));
     }
 
     /**
