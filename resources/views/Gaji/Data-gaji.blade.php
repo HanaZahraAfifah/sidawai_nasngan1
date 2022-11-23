@@ -54,7 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <br>
    <br>
   <div class = "card-body">
-            <table class ="table table-bordered table-default table-striped">
+            <table id="example1" class ="table table-bordered table-default table-striped">
             <thead class="table-dark">
 
 
@@ -83,10 +83,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 @endif
                 </thead>
 
-
+<tbody>
                 @foreach ($dtGaji as $item)
                 <tr>
-                <td>{{ ++$i }}</td>
+                <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->biodata->nama_pegawai }}</td>
                     <td>{{ $item->nip }}</td>
                     <td>{{ $item->tmt }}</td>
@@ -100,19 +100,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </td>
                 </tr>
                 @endforeach
+              </tbody>
             </table>
         </div>
         </div>
         </div>
         </div>
         <div class="card-footer">
-        @if(Auth::user()->level == "admin")
-        Ini Halaman Ke-: {{ $dtGaji->currentPage() }}<br>
-        Jumlah Data: {{ $dtGaji->total() }}<br>
-        Data perhalaman: {{ $dtGaji->perPage() }}<br>
-        <br>
-        {{ $dtGaji->links() }}  
-        @endif
+        
 
           </div>
       </div>

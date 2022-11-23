@@ -60,7 +60,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="form-group">
 
   <div class = "card-body">
-            <table class ="table table-bordered table-default table-striped">
+            <table id="example1" class ="table table-bordered table-default table-striped">
             <thead class="table-dark">
 
             @if(Auth::user()->level == "admin")
@@ -92,13 +92,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <th>No. Sertifikat</th>
                 </tr>
                 @endif
-                </div>
                 </thead>
 
-
+<tbody>
                 @foreach ($dtDiklat as $item)
                 <tr>
-                <td>{{ ++$i }}</td>
+                <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->biodata->nama_pegawai }}</td>
                     <td>{{ $item->nip }}</td>
                     <td>{{ $item->jenis_diklat }}</td>
@@ -115,6 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </td>
                 </tr>
                 @endforeach
+              </tbody>
             </table>
         </div>
         </div>
@@ -124,13 +124,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
 
         <div class="card-footer">
-        @if(Auth::user()->level == "admin")
-        Ini Halaman Ke-: {{ $dtDiklat->currentPage() }}<br>
-        Jumlah Data: {{ $dtDiklat->total() }}<br>
-        Data perhalaman: {{ $dtDiklat->perPage() }}<br>
-        <br>
-        {{ $dtDiklat->links() }}  
-        @endif
+        
 
         </div>
         </div>

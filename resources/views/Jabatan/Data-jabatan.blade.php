@@ -50,9 +50,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
  <br>
 
   <div class = "card-body" >
-            <table class ="table table-bordered">
+            <table id="example1" class ="table table-bordered">
             <thead class="table-dark">
-
                 <tr>
                     <th>No</th>
                     <th>Jenis Jabatan</th>
@@ -60,7 +59,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <th>Aksi</th>
                 </tr>
                 </thead>
-
+                <tbody>
                 @foreach ($dtJab as $item)
                 <tr>
                     <td>{{ $item->id }}</td>
@@ -72,6 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </td>
                 </tr>
                 @endforeach
+                </tbody>
             </table>
         </div>
         </div>
