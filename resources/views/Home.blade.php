@@ -14,7 +14,18 @@ $(function () {
     var barChartOptions = {
         responsive: true,
         maintainAspectRatio: false,
-        datasetFill: false
+        datasetFill: false,
+        scales: {
+            yAxes: [{
+            ticks: {
+                beginAtZero: true
+            },
+            scaleLabel: {
+                display: true,
+                labelString: 'Jumlah'
+            }
+            }]
+        },
     }
 
     new Chart(pegawaiASN, {
