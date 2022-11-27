@@ -18,7 +18,7 @@ class CutiController extends Controller
     {
         if(Auth::user()->level == "user"){
             $getBiodata = Biodata::where('users_id',Auth::user()->id)->first();
-            $dtCuti = Cuti::where('nama_pegawai_id',$getBiodata->id)->paginate($pagination);
+            $dtCuti = Cuti::where('nama_pegawai_id',$getBiodata->id)->get();
         }else{
             $dtCuti = Cuti::all();
         }
@@ -108,10 +108,4 @@ class CutiController extends Controller
 
         return back()->with('info', 'Data Berhasil Dihapus!');
     }
-    /**public function search(Request $request)
-    {
-        $keyword = $request->search;
-        $dtCuti = Cuti::where('nama_pegawai_id', 'like', "%" . $keyword . "%")->paginate(10);
-        return view('Cuti.Data-cuti', compact('dtCuti'))->with('i', (request()->input('page', 1) - 1) * 10);
-    }*/
 }

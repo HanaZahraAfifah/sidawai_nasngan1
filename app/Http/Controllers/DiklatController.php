@@ -18,7 +18,7 @@ class DiklatController extends Controller
     {
         if(Auth::user()->level == "user"){
             $getBiodata = Biodata::where('users_id',Auth::user()->id)->first();
-            $dtDiklat = Diklat::where('nama_pegawai_id',$getBiodata->id)->paginate($pagination);
+            $dtDiklat = Diklat::where('nama_pegawai_id',$getBiodata->id)->get();
         }else{
             $dtDiklat = Diklat::all();
         }
@@ -110,11 +110,4 @@ class DiklatController extends Controller
 
         return back()->with('info', 'Data Berhasil Dihapus!');
     }
-   public function search(Request $request)
-    {
-        $keyword = $request->search;
-        $dtDiklat= Diklat::where('nama_pegawai_id', 'like', "%" . $keyword . "%")->paginate(10);
-        return view('Diklat.Data-diklat', compact('dtDiklat'))->with('i', (request()->input('page', 1) - 1) * 10);
-      
-    } 
 }

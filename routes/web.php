@@ -14,12 +14,6 @@ use App\Http\Controllers\PensiunController;
 use App\Http\Controllers\DiklatController;
 use App\Http\Controllers\GajiController;
 use App\Http\Controllers\CutiController;
-
-
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,8 +34,6 @@ Route::post('/simpanregistrasi',[LoginController::class,'simpanregistrasi'])->na
 Route::get('/login',[LoginController::class,'halamanlogin'])->name('login');
 Route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
-
-
 
     Route::group(['middleware' => ['auth','ceklevel:admin, user']], function(){
     Route::get('/home',[HomeController::class,'index'])->name('home');
@@ -70,7 +62,7 @@ Route::get('/logout',[LoginController::class,'logout'])->name('logout');
     Route::post('/update-biodata/{id}',[BiodataController::class,'update'])->name('update-biodata');
     Route::get('/delete-biodata/{id}',[BiodataController::class,'destroy'])->name('delete-biodata');
     Route::get('/getjabatan/{id}',[BiodataController::class,'getJabatan']);
-    Route::get('/search', [BiodataController::class, 'search'])->name('search');
+    //Route::get('/search', [BiodataController::class, 'search'])->name('search');
 
 
     //BATAS USIA PENSIUN PEGAWAI
@@ -88,7 +80,7 @@ Route::get('/logout',[LoginController::class,'logout'])->name('logout');
     Route::get('/edit-diklat/{id}',[DiklatController::class,'edit'])->name('edit-diklat');
     Route::post('/update-diklat/{id}',[DiklatController::class,'update'])->name('update-diklat');
     Route::get('/delete-diklat/{id}',[DiklatController::class,'destroy'])->name('delete-diklat');
-    Route::get('/search', [DiklatController::class, 'search'])->name('search');
+    //Route::get('/search', [DiklatController::class, 'search'])->name('search');
 
 
     //KENKAIKAN GAJI PEGAWAI

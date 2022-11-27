@@ -13,11 +13,12 @@ class GajiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index(Request $request)
     {
         if(Auth::user()->level == "user"){
             $getBiodata = Biodata::where('users_id',Auth::user()->id)->first();
-            $dtGaji = Gaji::where('nama_pegawai_id',$getBiodata->id)->paginate($pagination);        
+            $dtGaji = Gaji::where('nama_pegawai_id',$getBiodata->id)->get();        
         }else{
             $dtGaji = Gaji::all();
         }
@@ -106,10 +107,4 @@ class GajiController extends Controller
 
         return back()->with('info', 'Data Berhasil Dihapus!');
     }
-    /**public function search(Request $request)
-    {
-        $keyword = $request->search;
-        $dtGaji = Gaji::where('nama_pegawai_id', 'like', "%" . $keyword . "%")->paginate(10);
-        return view('Gaji.Data-gaji', compact('dtGaji'))->with('i', (request()->input('page', 1) - 1) * 10);
-    }*/
 }

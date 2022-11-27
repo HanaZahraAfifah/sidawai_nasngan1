@@ -122,11 +122,4 @@ class BiodataController extends Controller
         $dtJab = Jabatan::where('jenis_jabatan_id', $id)->get();
         return response()->json($dtJab);
     }
-
-    public function search(Request $request)
-    {
-        $keyword = $request->search;
-        $dtBiodata = Biodata::where('nama_pegawai', 'like', "%" . $keyword . "%")->paginate(10);
-        return view('Biodata.Data-biodata', compact('dtBiodata'))->with('i', (request()->input('page', 1) - 1) * 10);
-    }
 }
