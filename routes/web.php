@@ -29,11 +29,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/registrasi',[LoginController::class,'registrasi'])->name('registrasi');
-Route::post('/simpanregistrasi',[LoginController::class,'simpanregistrasi'])->name('simpanregistrasi');
-Route::get('/login',[LoginController::class,'halamanlogin'])->name('login');
-Route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
-Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::get('/registrasi',[LoginController::class,'registrasi'])->name('registrasi');
+// Route::post('/simpanregistrasi',[LoginController::class,'simpanregistrasi'])->name('simpanregistrasi');
+// Route::get('/login',[LoginController::class,'halamanlogin'])->name('login');
+// Route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
+// Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
     Route::group(['middleware' => ['auth','ceklevel:admin, user']], function(){
     Route::get('/home',[HomeController::class,'index'])->name('home');
@@ -142,9 +145,4 @@ Route::get('/logout',[LoginController::class,'logout'])->name('logout');
     // Route::get('/edit-transaksi_pembelian/{id}',[TransaksiPembelianController::class,'edit'])->name('edit-transaksi_pembelian');
     // Route::post('/update-transaksi_pembelian/{id}',[TransaksiPembelianController::class,'update'])->name('update-transaksi_pembelian');
     // Route::get('/delete-transaksi_pembelian/{id}',[TransaksiPembelianController::class,'destroy'])->name('delete-transaksi_pembelian');
-
-
 });
-
-
-
