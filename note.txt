@@ -1,0 +1,5 @@
+tingkat pendidikan pegawai ASN
+select pendidikan,COUNT(id) total from biodata WHERE nip!="-" GROUP BY pendidikan;
+
+tingkat pendidikan pegawai non ASN
+select pendidikan,COUNT(id) total from biodata WHERE nip="-" GROUP BY pendidikan;
