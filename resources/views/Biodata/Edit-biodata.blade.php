@@ -57,14 +57,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
               {{ csrf_field() }}
 
               <div class="form-group">
+              <label for="exampleInputFile">Nama Pegawai</label>
                 <input type="text" id="nama_pegawai" name="nama_pegawai" class="form-control" placeholder="Nama Pegawai" value="{{ $dtBiodata->nama_pegawai }}">
               </div>
               
               <div class="form-group">
+              <label for="exampleInputFile">NIP</label>
                 <input type="text" id="nip" name="nip" class="form-control" placeholder="NIP" value="{{ $dtBiodata->nip }}">
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">Tempat Lahir</label>
                 <input type="text" id="tmp_lahir" name="tmp_lahir" class="form-control" placeholder="Tempat Lahir" value="{{ $dtBiodata->tmp_lahir }}">
               </div>
 
@@ -74,12 +77,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">Jenis Kelamin</label>
+              <select id="jenis_kelamin" name="jenis_kelamin" class="form-control" placeholder="Jenis Kelamin" value="{{ $dtBiodata->jenis_kelamin }}">
+                    <option>Laki-laki</option>
+                    <option>Perempuan</option>
+            </select>             
+           </div>
+
+              <div class="form-group">
+              <label for="exampleInputFile">Alamat</label>
                 <input type="text" id="alamat" name="alamat" class="form-control" placeholder="Alamat" value="{{ $dtBiodata->alamat }}">
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">Pendidikan</label>
               <select id="pendidikan" name="pendidikan" class="form-control" placeholder="Pendidikan" value="{{ $dtBiodata->pendidikan }}">
-                    <option>Pendidikan</option>
                     <option>S3</option>
                     <option>S2</option>
                     <option>S1</option>
@@ -95,10 +107,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               
               <div class="form-group">
+              <label for="exampleInputFile">Pangkat / Golongan</label>
                 <input type="text" id="pangkat_golongan" name="pangkat_golongan" class="form-control" placeholder="Pangkat / Golongan" value="{{ $dtBiodata->pangkat_golongan }}">
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">Jenis Jabatan</label>
                 <select class="form-control select2" style="width: 100%;" name="jenis_jabatan" id="jenis_jabatan">
                 <option  value="">Jenis Jabatan</option>
                 @foreach ($dtJenJab as $item)
@@ -108,6 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">Nama Jabatan</label>
                 <select class="form-control select2" style="width: 100%;" name="nama_jabatan_id" id="nama_jabatan_id">
                 <option  value="">Pilih Jabatan</option>
                 @foreach ($dtJab as $item)
@@ -117,10 +132,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">User ID</label>
                 <input type="text" id="users_id" name="users_id" class="form-control" placeholder="User ID" value="{{ $dtBiodata->users_id }}">
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">Terhitung Mulai Tanggal Masuk (TMT)</label>
                 <input type="text" id="tmt_masuk" name="tmt_masuk" class="form-control" placeholder="TMT Masuk (Non ASN)" value="{{ $dtBiodata->tmt_masuk }}">
               </div>
              
@@ -131,6 +148,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">Diklat Akhir</label>
                 <input type="text" id="diklat_akhir" name="diklat_akhir" class="form-control" placeholder="Diklat Terakhir" value="{{ $dtBiodata->diklat_akhir }}">
               </div>
 

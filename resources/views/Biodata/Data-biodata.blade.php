@@ -69,6 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <th>NIP</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
+                    <th>Jenis Kelamin</th>
                     <th>Alamat</th>
                     <th>Pendidikan</th>
                     <th>Pangkat / Golongan</th>
@@ -89,6 +90,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <th>NIP</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
+                    <th>Jenis Kelamin</th>
                     <th>Alamat</th>
                     <th>Pendidikan</th>
                     <th>Pangkat / Golongan</th>
@@ -107,6 +109,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{ $dtBiodata->nip }}</td>
                     <td>{{ $dtBiodata->tmp_lahir }}</td>
                     <td>{{ date('d-m-y', strtotime($dtBiodata->tgl_lahir)) }}</td>
+                    <td>{{ $dtBiodata->jenis_kelamin }}</td>
                     <td>{{ $dtBiodata->alamat }}</td>
                     <td>{{ $dtBiodata->pendidikan }}</td>
                     <td>{{ $dtBiodata->pangkat_golongan }}</td>
@@ -130,6 +133,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{ $item->nip }}</td>
                     <td>{{ $item->tmp_lahir }}</td>
                     <td>{{ date('d-m-y', strtotime($item->tgl_lahir)) }}</td>
+                    <td>{{ $item->jenis_kelamin }}</td>
                     <td>{{ $item->alamat }}</td>
                     <td>{{ $item->pendidikan }}</td>
                     <td>{{ $item->pangkat_golongan }}</td>

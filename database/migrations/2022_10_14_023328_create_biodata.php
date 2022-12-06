@@ -19,6 +19,7 @@ class CreateBiodata extends Migration
             $table->string('nip');
             $table->text('tmp_lahir');
             $table->date('tgl_lahir');
+            $table->text('jenis_kelamin');
             $table->string('alamat');
             $table->string('pendidikan');
             $table->text('pangkat_golongan');

@@ -57,6 +57,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               {{ csrf_field() }}
 
               <div class="form-group">
+              <label for="exampleInputFile">Nama Pegawai</label>
                 <select class="form-control select2" style="width: 100%;" name="nama_pegawai_id" id="nama_pegawai_id">
                 <option  value="">Nama Pegawai</option>
                 @foreach ($dtBiodata as $item)
@@ -66,10 +67,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               
               <div class="form-group">
+              <label for="exampleInputFile">NIP</label>
                 <input type="text" id="nip" name="nip" class="form-control" placeholder="NIP" value="{{ $dtDiklat->nip }}">
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">Jenis Diklat</label>
               <select id="jenis_diklat" name="jenis_diklat" class="form-control" placeholder="Jenis Diklat" value="{{ $dtDiklat->jenis_diklat }}">
                     <option>Jenis Diklat</option>
                     <option>Diklat Struktural</option>
@@ -78,22 +81,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
            </div>
               
               <div class="form-group">
+              <label for="exampleInputFile">Juklak Diklat</label>
                 <input type="text" id="juklak_diklat" name="juklak_diklat" class="form-control" placeholder="Juklak Diklat" value="{{ $dtDiklat->juklak_diklat }}">
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">Tempat</label>
                 <input type="text" id="tempat" name="tempat" class="form-control" placeholder="Tempat" value="{{ $dtDiklat->tempat }}">
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">Penyelenggara</label>
                 <input type="text" id="penyelenggara" name="penyelenggara" class="form-control" placeholder="Penyelenggara" value="{{ $dtDiklat->penyelenggara }}">
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">Jam Terlaksana</label>
                 <input type="text" id="jam_terlaksana" name="jam_terlaksana" class="form-control" placeholder="Jam Terlaksana" value="{{ $dtDiklat->jam_terlaksana }}">
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">No. Sertifikat</label>
                 <input type="text" id="no_sertifikat" name="no_sertifikat" class="form-control" placeholder="No. Sertifikat" value="{{ $dtDiklat->no_sertifikat }}">
               </div>
 

@@ -74,12 +74,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">Jenis Kelamin</label>
+              <select id="jenis_kelamin" name="jenis_kelamin" class="form-control" placeholder="Jenis Kelamin">
+\                    <option>Laki-laki</option>
+                    <option>Perempuan</option>
+              </select>              
+            </div>
+
+              <div class="form-group">
                 <input type="text" id="alamat" name="alamat" class="form-control" placeholder="Alamat">
               </div>
               
               <div class="form-group">
+              <label for="exampleInputFile">Pendidikan</label>
                 <select id="pendidikan" name="pendidikan" class="form-control" placeholder="Pendidikan">
-                    <option>Pendidikan</option>
                     <option>S3</option>
                     <option>S2</option>
                     <option>S1</option>

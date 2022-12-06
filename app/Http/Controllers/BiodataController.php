@@ -50,6 +50,7 @@ class BiodataController extends Controller
             'nip' => $request->nip,
             'tmp_lahir' => $request->tmp_lahir,
             'tgl_lahir' => $request->tgl_lahir,
+            'jenis_kelamin' => $request->jenis_kelamin,
             'alamat' => $request->alamat,
             'pendidikan' => $request->pendidikan,
             'pangkat_golongan' => $request->pangkat_golongan,

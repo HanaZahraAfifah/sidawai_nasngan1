@@ -3,10 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\SupplierController;
-use App\Http\Controllers\PetaniController;
-use App\Http\Controllers\ProdukController;
-use App\Http\Controllers\TransaksiPenjualanController;
 use App\Http\Controllers\JenisJabatanController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\BiodataController;
@@ -14,6 +10,7 @@ use App\Http\Controllers\PensiunController;
 use App\Http\Controllers\DiklatController;
 use App\Http\Controllers\GajiController;
 use App\Http\Controllers\CutiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,7 +62,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::post('/update-biodata/{id}',[BiodataController::class,'update'])->name('update-biodata');
     Route::get('/delete-biodata/{id}',[BiodataController::class,'destroy'])->name('delete-biodata');
     Route::get('/getjabatan/{id}',[BiodataController::class,'getJabatan']);
-    //Route::get('/search', [BiodataController::class, 'search'])->name('search');
 
 
     //BATAS USIA PENSIUN PEGAWAI
@@ -83,7 +79,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::get('/edit-diklat/{id}',[DiklatController::class,'edit'])->name('edit-diklat');
     Route::post('/update-diklat/{id}',[DiklatController::class,'update'])->name('update-diklat');
     Route::get('/delete-diklat/{id}',[DiklatController::class,'destroy'])->name('delete-diklat');
-    //Route::get('/search', [DiklatController::class, 'search'])->name('search');
 
 
     //KENKAIKAN GAJI PEGAWAI
@@ -93,7 +88,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::get('/edit-gaji/{id}',[GajiController::class,'edit'])->name('edit-gaji');
     Route::post('/update-gaji/{id}',[GajiController::class,'update'])->name('update-gaji');
     Route::get('/delete-gaji/{id}',[GajiController::class,'destroy'])->name('delete-gaji');
-    //Route::get('/search', [GajiController::class, 'search'])->name('search');
 
 
      //DATA CUTI PEGAWAI
@@ -103,46 +97,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
      Route::get('/edit-cuti/{id}',[CutiController::class,'edit'])->name('edit-cuti');
      Route::post('/update-cuti/{id}',[CutiController::class,'update'])->name('update-cuti');
      Route::get('/delete-cuti/{id}',[CutiController::class,'destroy'])->name('delete-cuti');
-     //Route::get('/search', [CutiController::class, 'search'])->name('search');
 
-    
-    //SUPPLIER
-    Route::get('/data-supplier',[SupplierController::class,'index'])->name('data-supplier');
-    Route::get('/create-supplier',[SupplierController::class,'create'])->name('create-supplier');
-    Route::post('/simpan-supplier',[SupplierController::class,'store'])->name('simpan-supplier');
-    Route::get('/edit-supplier/{id}',[SupplierController::class,'edit'])->name('edit-supplier');
-    Route::post('/update-supplier/{id}',[SupplierController::class,'update'])->name('update-supplier');
-    Route::get('/delete-supplier/{id}',[SupplierController::class,'destroy'])->name('delete-supplier');
 
-    //PETANI
-    Route::get('/data-petani',[PetaniController::class,'index'])->name('data-petani');
-    Route::get('/create-petani',[PetaniController::class,'create'])->name('create-petani');
-    Route::post('/simpan-petani',[PetaniController::class,'store'])->name('simpan-petani');
-    Route::get('/edit-petani/{id}',[PetaniController::class,'edit'])->name('edit-petani');
-    Route::post('/update-petani/{id}',[PetaniController::class,'update'])->name('update-petani');
-    Route::get('/delete-petani/{id}',[PetaniController::class,'destroy'])->name('delete-petani');
 
-    // //PRODUK
-    // Route::get('/data-produk',[ProdukController::class,'index'])->name('data-produk');
-    // Route::get('/create-produk',[ProdukController::class,'create'])->name('create-produk');
-    // Route::post('/simpan-produk',[ProdukController::class,'store'])->name('simpan-produk');
-    // Route::get('/edit-produk/{id}',[ProdukController::class,'edit'])->name('edit-produk');
-    // Route::post('/update-produk/{id}',[ProdukController::class,'update'])->name('update-produk');
-    // Route::get('/delete-produk/{id}',[ProdukController::class,'destroy'])->name('delete-produk');
-
-    // //TRANSAKSI PENJUALAN
-    // Route::get('/data-transaksi_penjualan',[TransaksiPenjualanController::class,'index'])->name('data-transaksi_penjualan');
-    // Route::get('/create-transaksi_penjualan',[TransaksiPenjualanController::class,'create'])->name('create-transaksi_penjualan');
-    // Route::post('/simpan-transaksi_penjualan',[TransaksiPenjualanController::class,'store'])->name('simpan-transaksi_penjualan');
-    // Route::get('/edit-transaksi_penjualan/{id}',[TransaksiPenjualanController::class,'edit'])->name('edit-transaksi_penjualan');
-    // Route::post('/update-transaksi_penjualan/{id}',[TransaksiPenjualanController::class,'update'])->name('update-transaksi_penjualan');
-    // Route::get('/delete-transaksi_penjualan/{id}',[TransaksiPenjualanController::class,'destroy'])->name('delete-transaksi_penjualan');
-
-    // //TRANSAKSI PEMBELIAN
-    // Route::get('/data-transaksi_pembelian',[TransaksiPembelianController::class,'index'])->name('data-transaksi_pembelian');
-    // Route::get('/create-transaksi_pembelian',[TransaksiPembelianController::class,'create'])->name('create-transaksi_pembelian');
-    // Route::post('/simpan-transaksi_pembelian',[TransaksiPembelianController::class,'store'])->name('simpan-transaksi_pembelian');
-    // Route::get('/edit-transaksi_pembelian/{id}',[TransaksiPembelianController::class,'edit'])->name('edit-transaksi_pembelian');
-    // Route::post('/update-transaksi_pembelian/{id}',[TransaksiPembelianController::class,'update'])->name('update-transaksi_pembelian');
-    // Route::get('/delete-transaksi_pembelian/{id}',[TransaksiPembelianController::class,'destroy'])->name('delete-transaksi_pembelian');
+   
 });

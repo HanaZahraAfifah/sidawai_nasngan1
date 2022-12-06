@@ -9,7 +9,7 @@ class Biodata extends Model
 {
     protected $table = "biodata";
     protected $primaryKey = "id";
-    protected $fillable = ['nama_pegawai','nip','tmp_lahir','tgl_lahir','alamat','pendidikan','pangkat_golongan','jabatan_id','users_id','tmt_masuk','tgl_pensiun','diklat_akhir']; 
+    protected $fillable = ['nama_pegawai','nip','tmp_lahir','tgl_lahir','jenis_kelamin','alamat','pendidikan','pangkat_golongan','jabatan_id','users_id','tmt_masuk','tgl_pensiun','diklat_akhir']; 
 
         public function jabatan(){
             return $this->belongsTo(Jabatan::class,'jabatan_id');

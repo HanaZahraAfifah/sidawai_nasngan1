@@ -33,6 +33,10 @@ class HomeController extends Controller
                         ->where('nip','-')
                         ->groupBy('pendidikan')
                         ->get();
-        return view('Home', compact('dtBiodata','dtDiklat','dtGaji','dtCuti','pegawaiASN','pegawaiNonASN'));
+        $jmlASN = Biodata::where('nip','!=','-')->count();
+        $jmlNonASN = Biodata::where('nip','-')->count();
+        $jmlLaki = Biodata::where('jenis_kelamin','Laki-laki')->count();
+        $jmlPerempuan = Biodata::where('jenis_kelamin','Perempuan')->count();
+        return view('Home', compact('dtBiodata','dtDiklat','dtGaji','dtCuti','pegawaiASN','pegawaiNonASN','jmlASN','jmlNonASN','jmlLaki','jmlPerempuan'));
     }
 }

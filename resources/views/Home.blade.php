@@ -38,7 +38,7 @@ $(function () {
             ],
             datasets: [{
                 label: 'ASN',
-                backgroundColor: 'rgba(60,141,188,0.9)',
+                backgroundColor: '#BDB76B',
                 borderColor: 'rgba(60,141,188,0.8)',
                 pointRadius: false,
                 pointColor: '#3b8bba',
@@ -65,7 +65,7 @@ $(function () {
             ],
             datasets: [{
                 label: 'Non ASN',
-                backgroundColor: '#77C9FF',
+                backgroundColor: '#556B2F',
                 borderColor: '#77C9FF',
                 pointRadius: false,
                 pointColor: '#77C9FF',
@@ -82,6 +82,30 @@ $(function () {
         options: barChartOptions
     })
 
+    var donutChartCanvas = $('#jmlPegawai').get(0).getContext('2d')
+      var donutData = {
+        labels: [
+          'ASN',
+          'Non ASN',
+          'Laki-laki',
+          'Perempuan',
+        ],
+        datasets: [{
+          data: [{{ $jmlASN }}, {{ $jmlNonASN }}, {{ $jmlLaki }}, {{ $jmlPerempuan }}],
+          backgroundColor: ['#BDB76B','#556B2F','#008B8B', '#B8860B'],
+        }]
+      }
+      var donutOptions = {
+        maintainAspectRatio: false,
+        responsive: true,
+      }
+      //Create pie or douhnut chart
+      // You can switch between pie and douhnut using the method below.
+      new Chart(donutChartCanvas, {
+        type: 'doughnut',
+        data: donutData,
+        options: donutOptions
+      })
 })
 </script>
 @endsection
@@ -122,7 +146,7 @@ $(function () {
                     <div class="icon">
                         <i class="fa fa-address-card"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="{{ route('data-biodata') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -138,7 +162,7 @@ $(function () {
                     <div class="icon">
                         <i class="fa fa-file"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="{{ route('data-diklat') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -154,7 +178,7 @@ $(function () {
                     <div class="icon">
                         <i class="fa fa-arrow-up"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="{{ route('data-gaji') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -170,7 +194,7 @@ $(function () {
                     <div class="icon">
                         <i class="fa fa-calendar"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="{{ route('data-cuti') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -193,6 +217,21 @@ $(function () {
                             <canvas id="barChart" style="min-height: 300px; height: 300px; max-height: 300px; max-width: 100%;"></canvas>
                         </div>
                     </div>
+                </div>
+                <div class="card card-danger">
+                    <div class="card-header">
+                    <h3 class="card-title">Jumlah Pegawai ASN dan Non ASN</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                    </div>
+                    <div class="card-body">
+                    <canvas id="jmlPegawai" style="min-height: 300px; height: 300px; max-height: 300px; max-width: 100%;"></canvas>
+                    </div>
+                    <!-- /.card-body -->
                 </div>
             </div>
             <div class="col-6">

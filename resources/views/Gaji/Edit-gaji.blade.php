@@ -57,6 +57,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               {{ csrf_field() }}
 
               <div class="form-group">
+              <label for="exampleInputFile">Nama Pegawai</label>
                 <select class="form-control select2" style="width: 100%;" name="nama_pegawai_id" id="nama_pegawai_id">
                 <option  value="">Nama Pegawai</option>
                 @foreach ($dtBiodata as $item)
@@ -66,10 +67,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               
               <div class="form-group">
+              <label for="exampleInputFile">NIP</label>
                 <input type="text" id="nip" name="nip" class="form-control" placeholder="NIP" value="{{ $dtGaji->nip }}">
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">Terhitung Mulai Tanggal</label>
                 <select id="tmt" name="tmt" class="form-control" placeholder="Terhitung Mulai Tanggal" value="{{ $dtGaji->tmt }}">
                     <option>Terhitung Mulai Tanggal</option>
                     <option>Ganjil</option>
@@ -78,10 +81,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">Bulan</label>
                 <input type="text" id="bulan" name="bulan" class="form-control" placeholder="Bulan" value="{{ $dtGaji->bulan }}">
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">Tahun</label>
                 <input type="text" id="tahun" name="tahun" class="form-control" placeholder="Tahun" value="{{ $dtGaji->tahun }}">
               </div>
 
