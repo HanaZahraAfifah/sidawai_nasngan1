@@ -34,7 +34,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
               <li class="breadcrumb-item active">Kenaikan Gaji Berkala</li>
             </ol>
           </div><!-- /.col -->
@@ -66,10 +66,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <th>Terhitung Mulai Tanggal</th>
                     <th>Bulan</th>
                     <th>Tahun</th>
+                    <th>SK KGB</th>
                     <th>Aksi</th>
                 </tr>
                 @endif
-
 
                 @if(Auth::user()->level == "user")
                 <tr>
@@ -79,6 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <th>Terhitung Mulai Tanggal</th>
                     <th>Bulan</th>
                     <th>Tahun</th>
+                    <th>SK KGB</th>
                 </tr>
                 @endif
                 </thead>
@@ -92,6 +93,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{ $item->tmt }}</td>
                     <td>{{ $item->bulan }}</td>
                     <td>{{ $item->tahun }}</td>
+                    <td><a href="{{ asset('sk_kgb/'.$item->sk_kgb) }}">{{ $item->sk_kgb }}</a></td>
                     <td>
                     @if(Auth::user()->level == 'admin')    
                     <a href ="{{ url('edit-gaji',$item->id) }}"><i class="fas fa-edit"></i></a>    

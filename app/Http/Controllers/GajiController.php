@@ -44,12 +44,16 @@ class GajiController extends Controller
      */
     public function store(Request $request)
     {
+        $fileName = time().'.'.$request->sk_kgb->extension();
+        $request->sk_kgb->move(public_path('sk_kgb'), $fileName);
+
         $dtGaji = new Gaji;
         $dtGaji->nama_pegawai_id = $request->nama_pegawai_id;
         $dtGaji->nip = $request->nip;
         $dtGaji->tmt = $request->tmt;
         $dtGaji->bulan = $request->bulan;
         $dtGaji->tahun = $request->tahun;
+        $dtGaji->sk_kgb = $fileName;
         $dtGaji->save();
         
         return redirect('data-gaji')->with('toast_success', 'Data Berhasil Tersimpan!');
@@ -86,10 +90,15 @@ class GajiController extends Controller
      * @param  \App\Models\Gaji  $gaji
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+   public function update(Request $request, $id)
     {
+        if(Request()->hasFile('sk_kgb')) {
+            $file = Request()->file('sk_kgb');
+            $fileName = Request()->nip.'.'.$file->extension();//errornya di sini
+            $file->move(public_path('sk_kgb'), $fileName);
+        }
+
         $dtGaji = Gaji::findorfail($id);
-        $dtGaji->update($request->all());
 
         return redirect('data-gaji')->with('toast_success', 'Data Berhasil Diubah!');
     }

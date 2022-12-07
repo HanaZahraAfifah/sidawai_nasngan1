@@ -91,6 +91,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
 
               <div class="form-group">
+              <label for="exampleInputFile">SK KGB</label>
+                <input type="file" id="sk_kgb" name="sk_kgb" class="form-control" placeholder="SK KGB" value="{{ $dtGaji->sk_kgb }}">
+              </div>
+
+              <div class="form-group">
                <button type="submit" class="btn btn-primary">Ubah Data</button> 
               </div>
 

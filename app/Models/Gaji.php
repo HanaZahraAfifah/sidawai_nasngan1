@@ -9,7 +9,7 @@ class Gaji extends Model
 {
     protected $table = "gaji";
     // protected $primaryKey = "id";
-     protected $fillable = ['nama_pegawai_id','nip','tmt','bulan','tahun'];
+     protected $fillable = ['nama_pegawai_id','nip','tmt','bulan','tahun','sk_kgb'];
      
      public function biodata(){
          return $this->belongsTo(biodata::class, 'nama_pegawai_id');
