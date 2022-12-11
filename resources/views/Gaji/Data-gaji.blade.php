@@ -93,7 +93,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{ $item->tmt }}</td>
                     <td>{{ $item->bulan }}</td>
                     <td>{{ $item->tahun }}</td>
-                    <td><a href="{{ asset('sk_kgb/'.$item->sk_kgb) }}">{{ $item->sk_kgb }}</a></td>
+                    <td>
+                      @if($item->sk_kgb)
+                        <a target="blank" href="{{ asset('sk_kgb/'.$item->sk_kgb) }}">lihat SK</a>
+                      @else
+                        <a>tidak ada file</a>
+                      @endif
+                    </td>
                     <td>
                     @if(Auth::user()->level == 'admin')    
                     <a href ="{{ url('edit-gaji',$item->id) }}"><i class="fas fa-edit"></i></a>    
