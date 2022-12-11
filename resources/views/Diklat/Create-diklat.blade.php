@@ -30,12 +30,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Data Diklat Pegawai</h1>
+            <h1 class="m-0">Diklat Pegawai</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Data Diklat Pegawai</li>
+              <li class="breadcrumb-item active">Create Diklat Pegawai</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -46,11 +46,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
         <div class = "card card-info card-outline">
             <div class = "card-header">
-               <h3>Create Diklat Pegawai Pegawai</h3>
-</div>
-    </div>
-    <!-- /.content -->
-  </div>
+               <h3>Create Diklat Pegawai</h3>
 
   <div class = "card-body">
             <form action="{{ route('simpan-diklat') }}" method="post" enctype="multipart/form-data">
@@ -100,6 +96,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="form-group">
                <button type="submit" class="btn btn-success">Simpan Data</button> 
               </div>
+              </div>
+              </div>
+              </div>
+              </div>
+
+              <div class="card-footer">          
+</div>
+    </div>
+    <!-- /.content -->
+  </div>
 
     </div>
 </div>

@@ -33,7 +33,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::post('/simpanregistrasi',[LoginController::class,'simpanregistrasi'])->name('simpanregistrasi');
 // Route::get('/login',[LoginController::class,'halamanlogin'])->name('login');
 // Route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
-// Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
     Route::group(['middleware' => ['auth','ceklevel:admin, user']], function(){
     Route::get('/home',[HomeController::class,'index'])->name('home');

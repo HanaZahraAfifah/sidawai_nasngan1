@@ -50,7 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div>
 
   <div class = "card-body">
-            <form action="{{ url('update-jenjab', $dtJenisJabatan->id) }}" method="post">
+            <form action="{{ url('update-jenjab', $dtJenJab->id) }}" method="post">
               {{ csrf_field() }}
 
              

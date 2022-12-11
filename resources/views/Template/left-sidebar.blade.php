@@ -54,6 +54,14 @@
             </li>
             @endif
 
+            <li class="nav-item">
+                            <a href="{{ route('home') }}" class="nav-link ">
+                                <i class="fas fa-home"></i>
+                                <p>
+                                    <font color="white">Dashboard</font>
+                                </p>
+                            </a>
+                        </li>
 
             <li class="nav-item ">
             <a href="{{ route('data-biodata') }}" class="nav-link ">

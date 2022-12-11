@@ -43,6 +43,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
         <div class = "card card-info card-outline">
             <div class = "card-header">
+            <h3>Data Jenis Jabatan</h3>
                 <div class = "card-tools">
                     <a href = "{{ route('create-jenjab') }}" class = "btn btn-success">Tambah Data<i class = "fas fa-plus-square"></i></a>
             </div>

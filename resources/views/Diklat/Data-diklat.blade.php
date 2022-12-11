@@ -30,7 +30,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Data Diklat Pegawai</h1>
+            <h1 class="m-0">Diklat Pegawai</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -46,6 +46,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
         <div class = "card card-info card-outline">
             <div class = "card-header">
+            <h3>Data Diklat Pegawai</h3>
             @if(Auth::user()->level == 'admin')    
                 <div class = "card-tools">
                     <a href = "{{ route('create-diklat') }}" class = "btn btn-success">Tambah Data<i class = "fas fa-plus-square"></i></a>

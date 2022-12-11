@@ -30,7 +30,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Kenaikan Gaji Berkala</h1>
+            <h1 class="m-0">Kenaikan Gaji Berkala (KGB)</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -46,6 +46,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
         <div class = "card card-info card-outline">
             <div class = "card-header">
+            <h3>Data Kenaikkan Gaji Berkala</h3>
             @if(Auth::user()->level == 'admin')    
                 <div class = "card-tools">
                     <a href = "{{ route('create-gaji') }}" class = "btn btn-success">Tambah Data<i class = "fas fa-plus-square"></i></a>
