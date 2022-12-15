@@ -14,9 +14,6 @@
 </head>
 
 <body class="hold-transition sidebar-mini">
-    <audio hidden autoplay loop>
-        <source src="{{ asset('AdminLte/dist/img/The_Heart_of_Borneo_Song.mp3')}}" type="audio/mpeg">
-    </audio>
     <div class="wrapper">
         <nav class="main-header navbar navbar-expand navbar-yellow navbar-light">
             <ul class="navbar-nav">

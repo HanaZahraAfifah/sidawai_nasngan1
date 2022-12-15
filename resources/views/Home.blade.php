@@ -129,6 +129,10 @@ $(function () {
 </div>
 <!-- /.content-header -->
 
+<audio hidden autoplay loop>
+             <source src="{{ asset('AdminLte/dist/img/The_Heart_of_Borneo_Song.mp3')}}" type="audio/mpeg">
+        </audio>
+
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
