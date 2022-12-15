@@ -74,7 +74,7 @@
             <div class="sidebar">
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <i class="fas fa-solid fa-user-tie"></i>
+                    <font color="gray"><i class="fas fa-solid fa-user-tie"></i></font>
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">

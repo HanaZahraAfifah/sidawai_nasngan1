@@ -1,56 +1,51 @@
-<!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html lang="en">
-<head>
-<title>AdminLTE 3 | Starter</title>
-    @include('Template.head')
-</head>
-<body class="hold-transition sidebar-mini">
-<audio hidden autoplay loop>
-             <source src="{{ asset('AdminLte/dist/img/Buah_Bolok.mp3')}}" type="audio/mpeg">
-        </audio>
-<div class="wrapper">
+@extends('layouts.app')
 
-  <!-- Navbar -->
-  @include('Template.navbar')
-  <!-- /.navbar -->
+@section('title','Kenaikkan Gaji Berkala')
 
-  <!-- Main Sidebar Container -->
- 
-  @include('Template.left-sidebar')
+@section('css')
+@endsection
 
+@section('js')
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+<script src="{{ asset('AdminLte/plugins/chart.js/Chart.min.js') }}"></script>
+<script src="{{ asset('adminLte/dist/js/demo.js') }}"></script>
+
+@endsection
+
+@section('content')
+
     <!-- Content Header (Page header) -->
-    <div class="content-header">
+    <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Kenaikan Gaji Berkala</h1>
+          <h1>@yield('title')</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Create Kenaikan Gaji Berkala</li>
+            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+            <li class="breadcrumb-item active"> @yield('title')</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
-    </div>
+      </section>    
     <!-- /.content-header -->
+
+    <audio hidden autoplay loop>
+             <source src="{{ asset('AdminLte/dist/img/Buah_Bolok.mp3')}}" type="audio/mpeg">
+        </audio>
+
     <!-- Main content -->
-    <div class="content">
-        <div class = "card card-info card-outline">
+    <section class="content">
+    <div class="container-fluid">
+    <div class="row">
+            <div class="col-12">
+            <div class="card">
             <div class = "card-header">
-               <h3>Create Kenaikan Gaji Berkala</h3>
+            <h3 class="card-title">Tambah @yield('title')</h3>
 </div>
-    </div>
     <!-- /.content -->
-  </div>
 
   <div class = "card-body">
             <form action="{{ route('simpan-gaji') }}" method="post" enctype="multipart/form-data">
@@ -92,30 +87,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
               <div class="form-group">
                <button type="submit" class="btn btn-success">Simpan Data</button> 
-              </div>
-
-    </div>
-</div>
-  <!-- /.content-wrapper -->
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-
-  <!-- Main Footer -->
- @include('Template.footer')
-</div>
-<!-- ./wrapper -->
-
-<!-- REQUIRED SCRIPTS -->
-
-<!-- jQuery -->
-@include('Template.script')
-</body>
-</html>
+               </div>
+                       
+                       </form>
+                   </div>
+               </div>
+           </div>
+</section>
+@endsection
