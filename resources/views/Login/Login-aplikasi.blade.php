@@ -67,6 +67,5 @@
 <!-- /.login-box -->
 
 <!-- jQuery -->
-    @include('Template.script')
 </body>
 </html>

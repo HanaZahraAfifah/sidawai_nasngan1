@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Des 2022 pada 12.58
+-- Waktu pembuatan: 23 Des 2022 pada 03.52
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -158,7 +158,9 @@ INSERT INTO `biodata` (`id`, `nama_pegawai`, `nip`, `tmp_lahir`, `tgl_lahir`, `j
 (111, 'SYAHDIANNOR', '-', 'Banjarmasin', '1987-05-18', 'Laki-laki', '-', 'SMA', '-', 38, 123, 0, '0001-01-01', '-', '2022-10-19 18:43:41', '2022-11-28 17:36:28', NULL),
 (112, 'M. FAJAR SATRIA', '-', 'Samarinda', '2002-08-11', 'Laki-laki', '-', 'SMA', '-', 38, 124, 0, '0001-01-01', '-', '2022-10-19 18:44:56', '2022-11-28 17:37:04', NULL),
 (113, 'M. ANAS SOLIHIN,SP', '-', 'Sidomulyo', '1992-04-12', 'Laki-laki', '-', 'S1', '-', 38, 125, 0, '0001-01-01', '-', '2022-10-19 18:46:19', '2022-11-28 17:37:32', NULL),
-(114, 'GITA MASLIANTY,SP', '-', 'Balikpapan', '1981-01-11', 'Perempuan', '-', 'S1', '-', 38, 126, 0, '0001-01-01', '-', '2022-10-19 18:47:52', '2022-11-28 17:40:08', NULL);
+(114, 'GITA MASLIANTY,SP', '-', 'Balikpapan', '1981-01-11', 'Perempuan', '-', 'S1', '-', 38, 126, 0, '0001-01-01', '-', '2022-10-19 18:47:52', '2022-11-28 17:40:08', NULL),
+(125, 'Zulvi Silviastuti', '196810071994032009', 'bqiuduq', '5555-04-11', 'Laki-laki', 'ufvjdjfd', 'S3', 'III/d', 7, 127, 0, '2022-12-30', 'bujdks dksakaskasks', '2022-12-15 18:06:43', '2022-12-15 18:11:17', NULL),
+(126, 'Surya Windi Pratiwi', '-', 'Samarinda', '2022-12-29', 'Laki-laki', 'Jl. Cokro', 'S3', 'III/d', 38, 126, 2015, NULL, 'PKA / DIKLAT PIM III / SEPADYA / SEPAMA / (15 November 2006)', '2022-12-15 18:10:21', '2022-12-15 18:10:21', NULL);
 
 -- --------------------------------------------------------
 
@@ -547,7 +549,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `level`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin Aplikasi', 'admin', 'admin@gmail.com', NULL, '$2y$10$1WUpxvOrW6Tce9pGcRtm6eG23JJoIsFWazpPu9OzYYRxuNTntcFlS', 'jI3yawLHJDSYLf73sLJqLivBKBZNCTnRMrlIoTjU7tFGMaSSXTiXuXAAD3D7', '2022-10-13 23:22:30', '2022-10-13 23:22:30'),
+(1, 'Admin Aplikasi', 'admin', 'admin@gmail.com', NULL, '$2y$10$1WUpxvOrW6Tce9pGcRtm6eG23JJoIsFWazpPu9OzYYRxuNTntcFlS', 'HdKny0mMTpl1kIAiN8TLmbCipU0cpCOg6217M6EngKWJSAIbqX1W9DlCGfR8', '2022-10-13 23:22:30', '2022-10-13 23:22:30'),
 (17, 'Siti Farisyah Yana', 'user', 'yana@gmail.com', NULL, '$2y$10$i7Nor9F/yy6Zy/X7VamgQu8lH05in2Gg6XHEgQSCrvXP3eL3I/tMm', NULL, '2022-10-27 19:55:36', '2022-10-27 19:55:36'),
 (20, 'Rini Susilawati', 'user', 'susilawati@gmail.com', NULL, '$2y$10$.OF1WEv0MMg9c0xEcVgtx.p6qb7635Y6rA6jUKqL4Z.joAkydGXn6', NULL, '2022-10-28 06:31:04', '2022-10-28 06:31:04'),
 (21, 'Rika Nuzli Furkanti', 'user', 'furkanti@gmail.com', NULL, '$2y$10$CKyBpzocIkD/obp6yGfOhuSPMylQDMiOufTTcXbpy29IiKzHHwurK', NULL, '2022-10-28 06:34:12', '2022-10-28 06:34:12'),
@@ -745,7 +747,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `biodata`
 --
 ALTER TABLE `biodata`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 
 --
 -- AUTO_INCREMENT untuk tabel `cuti`
