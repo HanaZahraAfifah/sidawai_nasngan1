@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Kenaikkan Gaji Berkala')
+@section('title','Kenaikan Gaji Berkala')
 
 @section('css')
 @endsection
