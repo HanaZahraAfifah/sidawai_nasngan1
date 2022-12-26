@@ -65,7 +65,11 @@
                 @endif
                 </div>
                 </div>
-            
+
+<div style="overflow-x:auto;">       
+  <form class="form-inline">
+            <div class="form-group">
+
   <div class = "card-body">
             <table id="example1" class ="table table-bordered table-default table-striped">
             <thead class="table-dark">
@@ -125,6 +129,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        </div>
+        </div>  
         </div>
     </section>
     @include('sweetalert::alert')

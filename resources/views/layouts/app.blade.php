@@ -179,8 +179,7 @@
                 Hana Zahra A 2022
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2022 <a href="https://dispertan.kaltimprov.go.id">Dinas Pangan, Tanaman Pangan dan Hortikultura
-                Prov. Kaltim</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 2022 <a href="https://dispertan.kaltimprov.go.id">Sistem Informasi Data Pegawai Dinas PTPH Prov. Kaltim</a>.</strong> All rights reserved.
         </footer>
         <aside class="control-sidebar control-sidebar-dark">
         </aside>
